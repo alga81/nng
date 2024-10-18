@@ -1083,7 +1083,7 @@ nni_sock_setopt(
 
 #if defined(NNG_PLATFORM_WINDOWS) && !defined(NNG_ELIDE_DEPRECATED)
 	} else if (strcmp(name, NNG_OPT_IPC_SECURITY_DESCRIPTOR) == 0) {
-		if ((rv = nni_copyin_ptr(NULL, v, sz, t)) == 0) {
+		if ((rv = nni_copyin_ptr(NULL, v, sz, t)) != 0) {
 			return (rv);
 		}
 #endif
